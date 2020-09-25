@@ -16,7 +16,6 @@ public class StartBlockingThreads {
     private final Lock lock1 = new ReentrantLock(true);
     private final Lock lock2 = new ReentrantLock(true);
 
-
     @GetMapping("/createDeadlock")
     private String startBlockingOneAnother(Model model) {
         new Thread(this::operation1, "T1").start();
