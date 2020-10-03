@@ -25,7 +25,7 @@ public class StartLeakingMemory {
     public void populateList() {
         //start increasing list in separate thread
         new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 100000; i++) {
                 list.add(Math.random());
             }
         }).start();
