@@ -35,19 +35,47 @@
 * use JMC command to start flight recorder on given JVM process (Instruct JVM to start/stop JFR process).
 * use JMC plugins
 
-### How to enable JFR on your app and how to control it
-* on Open JDK8
-```..\jdk-8.0.265.01-hotspot\bin\java.exe" -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+FlightRecorder "-XX:StartFlightRecording=name=\"DemoApplication_2020_09_19_001247\",settings=\"default\",dumponexit=true,filename=\"C:\Users\User\AppData\Local\Temp\javaFlightRecorder_sample.jfr\"" -XX:FlightRecorderOptions=stackdepth=2048 -XX:TieredStopAtLevel=1 -noverify -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true```
+### How to enable JFR on your service by adding VM options:
+* on Open JDK8 (from update 262)
+
+```-XX:StartFlightRecording=settings=default,dumponexit=true,disk=true,maxsize=1MB,filename=testFlightRecord.jfr```
 
 * on Open JDK11
-```..\jdk-11.0.8.10-hotspot\bin\java.exe" -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+FlightRecorder "-XX:StartFlightRecording=name=\"MemoryLeakingAppApplication_2020_09_18_233248\",settings=\"default\",dumponexit=true,filename=\"C:\Users\User\AppData\Local\Temp\javaFlightRecorder_sample.jfr\"" -XX:FlightRecorderOptions=stackdepth=2048 -XX:TieredStopAtLevel=1 -noverify -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true```
+
+```-XX:StartFlightRecording=settings=default,dumponexit=true,disk=true,maxsize=1MB,filename=testFlightRecord.jfr```
+
+### How to enable/disable it by jcmd
+
+```$ jcmd <PID> JFR.start duration=10h filename=myrecording.jfr```
+
+or 
+
+``` $ jcmd <PID> JFR.stop``` 
+   
+other commands:
+
+```
+   JFR.configure
+   JFR.stop
+   JFR.start
+   JFR.dump
+   JFR.check
+```
+
+### Other ways to enable Java Flight Recorder 
+- Intellij has build in 'Run with profiler'
+- Java Mission Control(JMC) can start JFR recording (it is using jcmd in the background)
 
 
 ### How to read and interpret JFR Data
-
+to read data use Java Mission Control tool. Open it and point to the .jfr file.
 
 
 ### What is coming next
+from Java 14 streaming of the JFR events is available... [JEP 349](https://openjdk.java.net/jeps/349)
+[Get a stream of high-volume data points about your running app.
+ by Ben Evans](https://blogs.oracle.com/javamagazine/java-flight-recorder-and-jfr-event-streaming-in-java-14)
+
  
  
 ### Reference
