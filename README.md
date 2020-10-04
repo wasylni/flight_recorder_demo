@@ -82,5 +82,5 @@ from Java 14 streaming of the JFR events is available... [JEP 349](https://openj
 For further reference, please consider the following sections:
 
 * [Interesting article about JFR & JMC from Redhat by Mario Torre](https://developers.redhat.com/blog/2020/08/25/get-started-with-jdk-flight-recorder-in-openjdk-8u/)
-
+* [(Old context) - Java Mission Control: Java Flight Recorder Deep Dive by Marcus Hirt](https://www.slideshare.net/marcushirt/java-mission-control-java-flight-recorder-deep-dive)
 * [Comprehensive list of VM options for different JDK implementations by Chris Newland](https://github.com/chriswhocodes/VMOptionsExplorer)
