@@ -24,13 +24,13 @@ public class StartLeakingMemory {
 
     public void populateList() {
         new Thread(() -> {
-            list.add(createBigString(100));
+            list.add(createBigString());
         }).start();
     }
 
-    private synchronized String createBigString(int sizeInMb) {
+    private synchronized String createBigString() {
         char c = (char) (new Random().nextInt(26) + 'a');
-        char[] chars = new char[sizeInMb * 1000000];
+        char[] chars = new char[100 * 1000000];
         Arrays.fill(chars, c);
         return new String(chars);
     }
