@@ -21,7 +21,7 @@
 ### how to run JFR:
 
 * by adding JVM options to your java process 
-* by execution of jmc instruction to your JVM process
+* by execution of ```jcmd``` instruction to your JVM process
 
 ### What is Java Mission Control (JMC)
 
@@ -40,7 +40,10 @@
 
 ```-XX:StartFlightRecording=settings=default,dumponexit=true,disk=true,maxsize=1MB,filename=testFlightRecord.jfr```
 
-* on Open JDK11
+This will start continuous recording of JFR events, with max size ever held of 1MB it will output these recordings to ```testFlightRecord.jfr``` file upon exit, or upon receive of DUMP instruction from ```jcmd``` for example: ```jcmd <PID> JFR.dump name=1```
+
+
+* on Open JDK11 (the same command)
 
 ```-XX:StartFlightRecording=settings=default,dumponexit=true,disk=true,maxsize=1MB,filename=testFlightRecord.jfr```
 
