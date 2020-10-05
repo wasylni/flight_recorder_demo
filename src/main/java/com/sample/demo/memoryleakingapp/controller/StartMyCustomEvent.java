@@ -1,10 +1,12 @@
 package com.sample.demo.memoryleakingapp.controller;
 
 import com.sample.demo.memoryleakingapp.jfr.MyFirstJfrEvent;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+@Scope("prototype")
 @Controller
 public class StartMyCustomEvent {
 

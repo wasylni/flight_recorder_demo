@@ -23,9 +23,7 @@ public class StartLeakingMemory {
     }
 
     public void populateList() {
-        new Thread(() -> {
-            list.add(createBigString());
-        }).start();
+        new Thread(() -> list.add(createBigString())).start();
     }
 
     private synchronized String createBigString() {
