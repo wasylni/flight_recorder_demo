@@ -9,6 +9,7 @@ import jdk.jfr.Label;
 public class MyFirstJfrEvent extends Event {
 
     @Label("Message")
-    public String message;
+    public
+    String message;
 
 }

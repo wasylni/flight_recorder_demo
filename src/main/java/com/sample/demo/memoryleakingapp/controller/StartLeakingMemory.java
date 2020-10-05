@@ -13,7 +13,7 @@ import java.util.Random;
 public class StartLeakingMemory {
 
     //static will not be GC collected
-    public static List<String> list = new ArrayList<>();
+    public static final List<String> list = new ArrayList<>();
 
     @GetMapping("/leakMemory")
     private String startMemoryLeak(Model model) {
