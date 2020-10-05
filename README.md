@@ -66,8 +66,8 @@ other commands:
 ```
 
 ### Other ways to enable Java Flight Recorder 
-- Intellij has build in 'Run with profiler'
-- Java Mission Control(JMC) can start JFR recording (it is using jcmd in the background)
+- Intellij has build in ```Run with profiler```
+- Java Mission Control(JMC) can start JFR recording (it is using ```jcmd``` in the background)
 
 
 ### How to read and interpret JFR Data
