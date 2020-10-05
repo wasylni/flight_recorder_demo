@@ -40,7 +40,8 @@
 
 ```-XX:StartFlightRecording=settings=default,dumponexit=true,disk=true,maxsize=1MB,filename=testFlightRecord.jfr```
 
-This will start continuous recording of JFR events, with max size ever held of 1MB it will output these recordings to ```testFlightRecord.jfr``` file upon exit, or upon receive of DUMP instruction from ```jcmd``` for example: ```jcmd <PID> JFR.dump name=1```
+This will start continuous recording of JFR events, with max size ever held of 1 MB it will output these recordings to ```testFlightRecord.jfr``` file upon exit, or upon receive of DUMP instruction from ```jcmd``` for example: ```jcmd <PID> JFR.dump name=1```
+```setting=default``` will start JFR with default config profile, there are two profiles available (one can add more or modify existing ones) profiles by default are located in ```jdk-11.0.8.10-hotspot\lib\jfr```
 
 
 * on Open JDK11 (the same command)
