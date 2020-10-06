@@ -4,12 +4,14 @@
 
 * Java Open JDK and JRE installed on your machine [Download OpenJDK](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot)
 * Java Mission Control tool and be able to run it [Download Java Mission Control](https://adoptopenjdk.net/jmc)
+* Maven (>3)
+* IDE of your choice
 
->> ##### Please note that JFR and JMC are only free to use on Open JDK on Oracle JDK these are paid commercial features. Please check your can/should use it on your JDK.
+>> ##### Please note that JFR and JMC are only free to use in Open JDK, in Oracle JDK these are paid commercial features. Please check your can/should use it on your JDK.
 
 ### What is Java Flight Recorder (JFR)
 
-* The JDK Flight Recorder (JFR) produces detailed recordings about the HotSpot JVM, and the application it is running.
+* JFR is part of JDK it produces detailed recordings about the HotSpot JVM, and the application it is running.
 * It is an event recorder built into the Java virtual machine, it can be thought of as the software equivalent of a Data Flight Recorder (Black Box) in a commercial aircraft.
 * Recorded events can be analyzed offline using the Java Mission Control tool. 
 * Recorded data includes profiling of methods, locks and allocations, as well as garbage collection statistics, optimization decisions, event latencies and more.
